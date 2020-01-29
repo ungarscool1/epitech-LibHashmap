@@ -11,13 +11,13 @@ SRC = src/hashmap_get.c\
 	src/my_hashmap_contains.c\
 	src/my_hashmap_convert.c\
 	src/my_hashmap_count.c\
-	src/my_hahsmap_set.c
+	src/my_hashmap_set.c
 
 NAME = libmy_hashmap.a
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -I./
 
 all: $(NAME)
 
