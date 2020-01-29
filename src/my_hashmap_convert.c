@@ -34,7 +34,7 @@ void **my_hashmap_convert(my_hashmap *map)
 
     if (array == NULL || map == NULL)
         return NULL;
-    node = map; 
+    node = map;
     for (int i = 0; i < my_hashmap_count(map); i++) {
         array[i] = node->data;
         node = node->next;
@@ -49,7 +49,7 @@ char **my_hashmap_to_string_array(my_hashmap *map)
 
     if (array == NULL || map == NULL)
         return NULL;
-    node = map; 
+    node = map;
     for (int i = 0; i < my_hashmap_count(map); i++) {
         int total_len = get_strlen(node->key) + get_strlen(node->data);
         array[i] = malloc(sizeof(char) * total_len);
