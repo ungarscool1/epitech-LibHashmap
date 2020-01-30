@@ -34,3 +34,8 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+tests_run: $(OBJ)
+	$(CC) $(CFLAGS) -lcriterion -o unit_tests --coverage $(SRC) tests/test_simple_test.c
+	./unit_tests
+	gcovr --exclude=tests -s

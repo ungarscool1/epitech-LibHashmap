@@ -50,7 +50,7 @@ int my_hashmap_put(my_hashmap **map, void *key, void *data)
 {
     my_hashmap *node;
 
-    if (map == NULL || key == NULL || data == NULL)
+    if ((*map) == NULL || key == NULL || data == NULL)
         return 0;
     node = malloc(sizeof(my_hashmap));
     node->key = key;
