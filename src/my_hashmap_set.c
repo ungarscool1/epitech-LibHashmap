@@ -45,7 +45,6 @@ int my_hashmap_set(my_hashmap **map, void const *key, void *data)
 
 int my_hashmap_remove(my_hashmap **map, void const *key)
 {
-    my_hashmap *next_node;
     my_hashmap *node;
     my_hashmap *previous;
 
