@@ -1,5 +1,7 @@
 # epitech-LibHashmap
 
+![CI](https://github.com/ungarscool1/epitech-LibHashmap/workflows/CI/badge.svg?event=push)
+
 A simple array list with key and data.
 
 ## Sample
