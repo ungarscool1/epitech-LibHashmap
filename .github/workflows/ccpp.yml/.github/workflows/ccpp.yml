@@ -9,9 +9,5 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    - name: configure
-      run: ./configure
     - name: make
       run: make
-    - name: make tests_run
-      run: make tests_run
