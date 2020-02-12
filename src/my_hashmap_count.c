@@ -15,7 +15,7 @@ int my_hashmap_count(my_hashmap *map)
     if (map == NULL)
         return 0;
     node = map;
-    while (node->next != NULL) {
+    while (node != NULL) {
         i++;
         node = node->next;
     }
