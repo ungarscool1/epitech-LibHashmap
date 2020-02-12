@@ -44,19 +44,22 @@ void **my_hashmap_convert(my_hashmap *map)
 
 char **my_hashmap_to_string_array(my_hashmap *map)
 {
-    char **array = malloc(sizeof(char *) * my_hashmap_count(map));
+    char **array = malloc(sizeof(char *) * (my_hashmap_count(map) + 1));
     my_hashmap *node;
 
     if (array == NULL || map == NULL)
         return NULL;
     node = map;
     for (int i = 0; i < my_hashmap_count(map); i++) {
-        int total_len = get_strlen(node->key) + get_strlen(node->data);
+        int total_len = get_strlen(node->key) + get_strlen(node->data) + 1;
         array[i] = malloc(sizeof(char) * total_len);
+        if (array[i] == NULL)
+            return NULL;
         concat_str(array[i], node->key);
         concat_str(array[i], "=");
         concat_str(array[i], node->data);
         node = node->next;
     }
+    array[my_hashmap_count(map)] = NULL;
     return array;
 }
