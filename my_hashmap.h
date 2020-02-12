@@ -29,18 +29,18 @@ void *my_hashmap_get_from_data(my_hashmap *map, void *data);
 
 /**
 * Does hashmap contains key
-* @return 1 when true, 0 when false, -1 when map is NULL
+* @return 1 when true, 0 when false
 **/
 int my_hashmap_contains(my_hashmap *map, void const *key);
 
 /**
-* @return 1 when true, 0 when false, -1 when map is NULL
+* @return 1 when true, 0 when false
 **/
 int my_hashmap_contains_from_data(my_hashmap *map, void const *data);
 
 /**
 * Put a new row in HashMap
-* @return 1 when ok. 0 when one arg is NULL
+* @return 1 when ok. 0 if an error occured
 **/
 int my_hashmap_put(my_hashmap **map, void *key, void *data);
 
