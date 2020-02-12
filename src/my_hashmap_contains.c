@@ -11,8 +11,6 @@ int my_hashmap_contains(my_hashmap *map, void const *key)
 {
     my_hashmap *node;
 
-    if (map == NULL)
-        return -1;
     node = map;
     while (node != NULL) {
         if (node->key == key)
@@ -26,8 +24,6 @@ int my_hashmap_contains_from_data(my_hashmap *map, void const *data)
 {
     my_hashmap *node;
 
-    if (map == NULL)
-        return -1;
     node = map;
     while (node != NULL) {
         if (node->data == data)
