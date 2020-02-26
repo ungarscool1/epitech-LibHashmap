@@ -73,13 +73,21 @@ int my_hashmap_remove(my_hashmap **map, void const *key)
 int my_hashmap_put(my_hashmap **map, void *key, void *data)
 {
     my_hashmap *node;
+    my_hashmap *temp;
 
     if (key == NULL || data == NULL)
         return 0;
     node = malloc(sizeof(my_hashmap));
     node->key = key;
     node->data = data;
-    node->next = (*map);
-    (*map) = node;
+    node->next = NULL;
+    if ((*map) == NULL) {
+        (*map) = node;
+        return 1;
+    }
+    temp = (*map);
+    while (temp->next != NULL)
+        temp = temp->next;
+    temp->next = node;
     return 1;
 }

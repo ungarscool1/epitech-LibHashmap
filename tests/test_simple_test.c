@@ -85,8 +85,8 @@ Test(hashmap, convert_to_str_array, .timeout = 10)
     my_hashmap_put(&map, "bonjour", "ca va ?");
     my_hashmap_put(&map, "hey", "how are you ?");
     array = my_hashmap_to_string_array(map);
-    cr_assert_str_eq(array[1], "bonjour=ca va ?");
-    cr_assert_str_eq(array[0], "hey=how are you ?");
+    cr_assert_str_eq(array[0], "bonjour=ca va ?");
+    cr_assert_str_eq(array[1], "hey=how are you ?");
 }
 
 Test(hashmap, convert_to_array, .timeout = 10)
@@ -97,6 +97,6 @@ Test(hashmap, convert_to_array, .timeout = 10)
     my_hashmap_put(&map, (int *) 25, (int *) (25 + 2));
     my_hashmap_put(&map, (int *) 33, (int *) (33 + 2));
     array = my_hashmap_convert(map);
-    cr_assert_eq(array[0], 35);
-    cr_assert_eq(array[1], 27);
+    cr_assert_eq(array[0], 27);
+    cr_assert_eq(array[1], 35);
 }

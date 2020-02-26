@@ -17,7 +17,9 @@ NAME = libmy_hashmap.a
 
 OBJ = $(SRC:.c=.o)
 
-CFLAGS = -Wall -Wextra -I./
+CFLAGS = -Wall -Wextra
+
+CPPFLAGS = -I./
 
 all: $(NAME)
 
@@ -35,6 +37,6 @@ fclean: clean
 
 re: fclean all
 
-tests_run: $(OBJ)
-	$(CC) $(CFLAGS) -lcriterion -o unit_tests --coverage $(SRC) tests/test_simple_test.c
+tests_run:
+	$(CC) $(CFLAGS) $(CPPFLAGS) -lcriterion -o unit_tests --coverage $(SRC) tests/test_simple_test.c
 	./unit_tests
