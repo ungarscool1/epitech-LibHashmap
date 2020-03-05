@@ -27,9 +27,9 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
-	cp $(NAME) ../
-	mkdir -p ../../include
-	cp my_hashmap.h ../../include
+	#cp $(NAME) ../
+	#mkdir -p ../../include
+	#cp my_hashmap.h ../../include
 
 clean:
 	$(RM) $(OBJ)
