@@ -100,3 +100,30 @@ Test(hashmap, convert_to_array, .timeout = 10)
     cr_assert_eq(array[0], 27);
     cr_assert_eq(array[1], 35);
 }
+
+Test(hashmap, convert_to_keys_array, .timeout = 10)
+{
+    my_hashmap *map = NULL;
+    void **array;
+
+    my_hashmap_put(&map, (int *) 25, (int *) (25 + 2));
+    my_hashmap_put(&map, (int *) 33, (int *) (33 + 2));
+    array = my_hashmap_convert_keys(map);
+    cr_assert_eq(array[0], 25);
+    cr_assert_eq(array[1], 33);
+}
+
+Test(hahsmap, clear_map, .timeout = 10)
+{
+    my_hashmap *map = NULL;
+    int return_value = -1;
+
+    my_hashmap_put(&map, "key", "data");
+    my_hashmap_put(&map, "carte", "de france");
+    my_hashmap_put(&map, "terminal", "cmd");
+    my_hashmap_put(&map, "table", "chaise");
+    my_hashmap_put(&map, "porte", "poigne");
+    return_value = my_hashmap_clear(&map);
+    cr_assert_eq(return_value, 1);
+    cr_assert_null(map);
+}

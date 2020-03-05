@@ -1,8 +1,10 @@
-# epitech-LibHashmap
+# My Epitech libs - Hashmap 
 
 ![CI](https://github.com/ungarscool1/epitech-LibHashmap/workflows/CI/badge.svg?event=push)
 
-A simple array list with key and data.
+## Introduction
+
+Hashmap is a associative array, it must contain a key and a value.
 
 ## Sample
 

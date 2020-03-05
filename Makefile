@@ -11,7 +11,9 @@ SRC = src/hashmap_get.c\
 	src/my_hashmap_contains.c\
 	src/my_hashmap_convert.c\
 	src/my_hashmap_count.c\
-	src/my_hashmap_set.c
+	src/my_hashmap_set.c\
+	src/my_hashmap_clear.c\
+	src/my_hashmap_convert_keys.c
 
 NAME = libmy_hashmap.a
 

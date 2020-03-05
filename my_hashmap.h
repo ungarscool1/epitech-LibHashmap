@@ -65,7 +65,7 @@ char **my_hashmap_to_string_array(my_hashmap *map);
 
 /**
 * Transform the hashmap to an all type array as format: DATA
-* @return void *
+* @return void **
 **/
 void **my_hashmap_convert(my_hashmap *map);
 
@@ -74,5 +74,17 @@ void **my_hashmap_convert(my_hashmap *map);
 * @return int
 **/
 int my_hashmap_remove(my_hashmap **map, void const *key);
+
+/**
+ * Transform the hashmap to an all type array as format: KEY
+ * @return void **
+**/
+void **my_hashmap_convert_keys(my_hashmap *map);
+
+/**
+ * Free the entire of the map
+ * @return int
+**/
+int my_hashmap_clear(my_hashmap **map);
 
 #endif /* !MY_HASHMAP */
