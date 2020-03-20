@@ -7,14 +7,15 @@
 
 #include <stdlib.h>
 
+#ifndef MY_HASHMAP
+#define MY_HASHMAP
+
 typedef struct my_hashmap{
     void *key;
     void *data;
     struct my_hashmap *next;
 } my_hashmap;
 
-#ifndef MY_HASHMAP
-#define MY_HASHMAP
 /**
 * Get data from key in hashmap
 * @return void *
