@@ -32,9 +32,16 @@ Test(hashmap, put_five_element, .timeout = 10)
 Test(hashmap, get_an_elem_from_key, .timeout = 10)
 {
     my_hashmap *map = NULL;
+    char *test_str = malloc(sizeof(char) * 5);
 
+    test_str[0] = 't';
+    test_str[1] = 'e';
+    test_str[2] = 's';
+    test_str[3] = 't';
     my_hashmap_put(&map, "test", "This is a test");
     cr_assert_str_eq(my_hashmap_get(map, "test"), "This is a test");
+    cr_assert_str_eq(my_hashmap_get(map, test_str), "This is a test");
+    free(test_str);
 }
 
 Test(hashmap, get_an_elem_from_data, .timeout = 10)
@@ -70,10 +77,16 @@ Test(hashmap, map_is_NULL, .timeout = 30)
 Test(hashmap, key_not_found, .timeout = 30)
 {
     my_hashmap *map = NULL;
+    char *test_str = malloc(sizeof(char) * 5);
 
+    test_str[0] = 'k';
+    test_str[1] = 'e';
+    test_str[2] = 'y';
+    test_str[3] = 's';
     my_hashmap_put(&map, "key", "data");
     my_hashmap_put(&map, "abcde", "letters");
     cr_assert_eq(my_hashmap_contains(map, "test"), 0);
+    cr_assert_eq(my_hashmap_contains(map, test_str), 0);
     cr_assert_eq(my_hashmap_contains_from_data(map, "test"), 0);
 }
 
