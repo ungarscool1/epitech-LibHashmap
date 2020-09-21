@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Hashmap is a associative array, it must contain a key and a value.
+Hashmap is a associative array, it must contain a key and a value
 
 ## Sample
 
